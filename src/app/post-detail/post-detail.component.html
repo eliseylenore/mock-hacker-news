@@ -1,6 +1,7 @@
 <div class="post-detail">
   <p>
-    {{post.title}}
+    <span class="triangle-up" (click)="upVote(post)">
+    </span> {{post.title}}
   </p>
   <p class="small-text">
     {{post.points}} by {{post.author}} {{post.time}} | <span>hide</span> | <span>past</span> |<span>web</span> | <span>comments</span> | <span>favorite</span> |
@@ -16,8 +17,11 @@
       <button (click)="addComment(newAuthor.value, newText.value)" class="btn">add comment</button>
     </form>
   </div>
-  <div *ngFor="let comment of comments">
-    <p>{{comment.author}}</p>
-    <p>{{comment.text}}</p>
+  <div class="comments" *ngFor="let comment of comments">
+    <p class="small-text"><span class="triangle-up" (click)="upVote(comment)">
+    </span>
+      {{comment.author}} {{comment.points}} {{comment.date}}</p>
+      <p>{{comment.text}}</p>
+
   </div>
 </div>

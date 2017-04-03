@@ -75,3 +75,8 @@ a:visited {
 	border-bottom: 10px solid grey;
   display: inline-block;
 }
+
+.comments p {
+  margin-top: 20px;
+  margin-bottom: -10px; 
+}

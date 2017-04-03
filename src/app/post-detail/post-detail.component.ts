@@ -34,4 +34,8 @@ export class PostDetailComponent implements OnInit {
     this.comments.push(newComment);
   }
 
+  upVote(clickedObject) {
+    clickedObject.points++;
+  }
+
 }
