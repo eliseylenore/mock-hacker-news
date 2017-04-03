@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post, POSTS } from './../post.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-tile',
@@ -7,5 +8,10 @@ import { Post, POSTS } from './../post.model';
   styleUrls: ['./post-tile.component.css']
 })
 export class PostTileComponent {
+  constructor(private router: Router){}
   posts: Post[] = POSTS;
+
+  goToDetailPage(clickedPost: Post) {
+    this.router.navigate(['posts', clickedPost.id]);
+  }
 }

@@ -10,6 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { NewestPipe } from './newest.pipe';
 import { NewestPostsComponent } from './newest-posts/newest-posts.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewestPostsComponent } from './newest-posts/newest-posts.component';
     WelcomeComponent,
     AboutComponent,
     NewestPipe,
-    NewestPostsComponent
+    NewestPostsComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,

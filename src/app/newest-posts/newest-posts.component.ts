@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Post, POSTS } from './../post.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,6 +9,10 @@ import { Post, POSTS } from './../post.model';
   styleUrls: ['./newest-posts.component.css']
 })
 export class NewestPostsComponent{
-posts: Post[] = POSTS;
+  posts: Post[] = POSTS;
 
+  constructor(private router: Router) {}
+  goToDetailPage(clickedPost: Post) {
+    this.router.navigate(['posts', clickedPost.id])
+  }
 }
