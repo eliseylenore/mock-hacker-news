@@ -7,7 +7,13 @@ import { Post } from './post.model'
 export class NewestPipe implements PipeTransform {
 
   transform(input: Post[]) {
-    return input;
+    var output: Post[] = [];
+    for (var i = 0; i < input.length; i++) {
+      if(input[i].points > 6) {
+        output.push(input[i])
+      }
+    }
+    return output;
   }
 
 }
