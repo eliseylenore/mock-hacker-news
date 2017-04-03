@@ -3,3 +3,7 @@
   Post ID from Object: {{post.id}}
   Post Name: {{post.title}}
 </p>
+<div *ngFor="let comment of comments">
+  <p>{{comment.author}}</p>
+  <p>{{comment.text}}</p>
+</div>
