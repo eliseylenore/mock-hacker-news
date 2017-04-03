@@ -8,7 +8,7 @@ export class Comment {
     public date: Date,
     public points: number,
     public post: number
-  ){}
+  ) {}
 }
 
 export var COMMENTS: Comment[] = [

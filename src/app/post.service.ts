@@ -2,21 +2,26 @@ import { Injectable } from '@angular/core';
 import { Post } from './post.model';
 import { POSTS } from './mock-posts';
 
+let masterPostList: Post[] = POSTS;
+
 @Injectable()
 export class PostService {
-
   constructor() { }
 
   getAll() {
-    return POSTS;
+    return masterPostList;
   }
 
   find(id) {
-    for(var i = 0; i < POSTS.length; i++) {
-      if(POSTS[i].id === id) {
-        return POSTS[i];
+    for(let i = 0; i < masterPostList.length; i++) {
+      if(masterPostList[i].id === id) {
+        return masterPostList[i];
       }
     }
+  }
+
+  addPost(Post) {
+    masterPostList.push(Post);
   }
 
 }

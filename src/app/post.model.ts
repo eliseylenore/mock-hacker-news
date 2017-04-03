@@ -1,5 +1,11 @@
 import { Comment } from './comment.model';
+import { POSTS } from './mock-posts';
+
+var idcounter = 0;
 
 export class Post {
-  constructor(public title: string, public date: Date, public points: number, public author: string, public url: string, public text: string, public id: number) {}
+  public date: Date = new Date();
+  public points: number = 0;
+  public id = idcounter++;
+  constructor(public title: string, public author: string, public url: string, public text: string) {}
 }

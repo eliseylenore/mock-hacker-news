@@ -1,0 +1,15 @@
+<form>
+  <div class="form-group">
+    <input class="form-control" type="text" #newTitle placeholder="Your Title">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" #newAuthor placeholder="Your name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" #newText placeholder="Post here!">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" #newUrl placeholder="URL">
+  </div>
+  <button name="button" (click)="submitForm(newTitle.value, newAuthor.value, newUrl.value, newText.value)">Submit</button>
+</form>

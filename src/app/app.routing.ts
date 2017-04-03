@@ -5,6 +5,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { NewestPostsComponent } from './newest-posts/newest-posts.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'posts/:id',
     component: PostDetailComponent
+  },
+  {
+    path: 'new-post',
+    component: NewPostComponent
   }
 ];
 
