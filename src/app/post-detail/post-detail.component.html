@@ -20,7 +20,7 @@
   <div class="comments" *ngFor="let comment of comments">
     <p class="small-text"><span class="triangle-up" (click)="upVote(comment)">
     </span>
-      {{comment.author}} {{comment.points}} {{comment.date}}</p>
+      {{comment.author}} {{comment.points}} points {{comment.date.getMonth()}}/{{comment.date.getDay()}}/{{comment.date.getFullYear()}}</p>
       <p>{{comment.text}}</p>
 
   </div>
