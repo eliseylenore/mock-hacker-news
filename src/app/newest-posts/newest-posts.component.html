@@ -1,5 +1,4 @@
 
-
-  <div *ngFor="let post of posts | newest "  (click)="goToDetailPage(post)">
-    {{post.title}} {{post.points}}<br>
-  </div>
+<div *ngFor="let post of postService.getAll() | newest" (click)="goToDetailPage(post)">
+  {{post.id}}
+<div>
