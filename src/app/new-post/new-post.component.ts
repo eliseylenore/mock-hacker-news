@@ -19,7 +19,6 @@ export class NewPostComponent  {
     var newPost = new Post(title, author, url, text);
     this.postService.addPost(newPost);
     this.router.navigate(['posts', newPost.id]);
-
   }
 
 }

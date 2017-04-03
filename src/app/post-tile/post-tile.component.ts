@@ -15,4 +15,8 @@ export class PostTileComponent {
   goToDetailPage(clickedPost: Post) {
     this.router.navigate(['posts', clickedPost.id]);
   }
+
+  upVote(clickedPost: Post) {
+    clickedPost.points ++;
+  }
 }

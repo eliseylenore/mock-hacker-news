@@ -1,9 +1,23 @@
-<p>
-  Post ID as Variable: {{postId}}
-  Post ID from Object: {{post.id}}
-  Post Name: {{post.title}}
-</p>
-<div *ngFor="let comment of comments">
-  <p>{{comment.author}}</p>
-  <p>{{comment.text}}</p>
+<div class="post-detail">
+  <p>
+    {{post.title}}
+  </p>
+  <p class="small-text">
+    {{post.points}} by {{post.author}} {{post.time}} | <span>hide</span> | <span>past</span> |<span>web</span> | <span>comments</span> | <span>favorite</span> |
+  </p>
+  <div class="post-comment">
+    <form>
+      <div class="form-group">
+        <input type="text" #newAuthor placeholder="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <textarea cols=80 rows=10 type="text" #newText class="form-control" placeholder="Comment"></textarea>
+      </div>
+      <button (click)="addComment(newAuthor.value, newText.value)" class="btn">add comment</button>
+    </form>
+  </div>
+  <div *ngFor="let comment of comments">
+    <p>{{comment.author}}</p>
+    <p>{{comment.text}}</p>
+  </div>
 </div>

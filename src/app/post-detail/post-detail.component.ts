@@ -5,6 +5,7 @@ import { Post } from './../post.model';
 import { PostService } from './../post.service';
 import { CommentService } from './../comment.service';
 import { Comment } from './../comment.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-detail',
@@ -17,7 +18,7 @@ export class PostDetailComponent implements OnInit {
   postId: number = null;
   comments: Comment[];
 
-  constructor(private route: ActivatedRoute, private location: Location, private postService: PostService, private commentService: CommentService) { }
+  constructor(private route: ActivatedRoute, private location: Location, private postService: PostService, private commentService: CommentService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -25,6 +26,12 @@ export class PostDetailComponent implements OnInit {
     })
     this.post = this.postService.find(this.postId);
     this.comments = this.commentService.findByPostId(this.postId);
+  }
+
+  addComment(authorName, text) {
+    var newComment = new Comment(authorName, text, this.postId);
+    this.commentService.addComment(newComment);
+    this.comments.push(newComment);
   }
 
 }

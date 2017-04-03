@@ -1,3 +1,15 @@
-  <div *ngFor="let post of postService.getAll()" (click)="goToDetailPage(post)">
-    <p>{{post.title}}</p>
-  </div>
+<div class="post-div">
+  <ol>
+    <div *ngFor="let post of postService.getAll()">
+        <li>
+          <p><span class="triangle-up" (click)="upVote(post)">
+          </span>
+            <a (click)="goToDetailPage(post)">{{post.title}}
+            </a>
+          </p>
+        <p class="small-text">{{post.points}} points by {{post.author}} at {{post.date}}</p>
+      </li>
+
+    </div>
+  </ol>
+</div>
